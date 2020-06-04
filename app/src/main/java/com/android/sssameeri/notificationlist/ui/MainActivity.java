@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     stopServiceInSettings();
                     stopService(intent);
                     startService.setText(R.string.start);
-                    startService.setBackgroundColor(getResources().getColor(R.color.black));
+                    startService.setBackgroundColor(getResources().getColor(R.color.colorAccent));
                     isStarted = false;
                 } else {
                     startService(intent);
