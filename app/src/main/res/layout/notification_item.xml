@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="8dp"
+    >
+
+    <ImageView
+        android:id="@+id/appIconImgView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        tools:src="@drawable/ic_baseline_android_24"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        />
+
+    <TextView
+        android:id="@+id/appNameTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        tools:text="Android System"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/appIconImgView"
+        />
+
+    <TextView
+        android:id="@+id/notificationDescriptionTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        tools:text="You have many notifications"
+        android:layout_toEndOf="@id/appIconImgView"
+        android:layout_below="@id/appNameTxtView"
+        />
+
+    <TextView
+        android:id="@+id/timeTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        tools:text="22:04"
+        android:layout_alignParentEnd="true"
+        />
+
+    <TextView
+        android:id="@+id/dateTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        tools:text="02.06.2020"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/timeTxtView"
+        />
+</RelativeLayout>

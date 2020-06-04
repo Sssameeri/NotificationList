@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/sortMenu"
+        android:title="@string/sort"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_sort_24">
+        <menu>
+            <group
+                android:checkableBehavior="single"
+                >
+                <item
+                    android:id="@+id/all"
+                    android:title="@string/all"
+                    android:checked="true"
+                    />
+                <item
+                    android:id="@+id/perHour"
+                    android:title="@string/per_hour"
+                    />
+                <item
+                    android:id="@+id/perDay"
+                    android:title="@string/per_day"
+                    />
+                <item
+                    android:id="@+id/perMonth"
+                    android:title="@string/per_month"
+                    />
+            </group>
+        </menu>
+    </item>
+</menu>

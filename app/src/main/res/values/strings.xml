@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Notification List</string>
+    <string name="there_s_no_notifications_yet">There`s no notifications yet</string>
+    <string name="sort">Sort</string>
+    <string name="notification_service">NotificationService</string>
+    <string name="notification_channel_name">Notification Service</string>
+    <string name="notification_description">TNotification Service Description</string>
+    <string name="all">All</string>
+    <string name="per_hour">Per Hour</string>
+    <string name="per_day">Per Day</string>
+    <string name="per_month">Per Month</string>
+    <string name="stop">Stop</string>
+    <string name="start">Start</string>
+    <string name="error">Getting data failed</string>
+    <string name="stop_service_here">Stop service here</string>
+    <string name="need_permission">Need notification listener permission</string>
+    <string name="service_error">Service error</string>
+</resources>
