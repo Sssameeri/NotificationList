@@ -27,6 +27,7 @@ import android.widget.Toast;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.android.sssameeri.notificationlist.NotificationApplication;
 import com.android.sssameeri.notificationlist.R;
 import com.android.sssameeri.notificationlist.data.dao.NotificationDao;
 import com.android.sssameeri.notificationlist.data.database.Database;
@@ -38,6 +39,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
+import javax.inject.Inject;
 
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -57,7 +60,11 @@ public class NotificationsService extends NotificationListenerService {
     public static final int notificationId = 13;
 
     private NotificationModel notificationModel;
-    private NotificationDao notificationDao;
+
+    @Inject
+    Database database;
+    @Inject
+    NotificationDao notificationDao;
 
     private NotificationCompat.Builder notification;
 
@@ -66,11 +73,11 @@ public class NotificationsService extends NotificationListenerService {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        ((NotificationApplication) getApplication()).getComponent().inject(this);
+
         compositeDisposable = new CompositeDisposable();
         notificationModel = new NotificationModel();
-
-        Database database = Database.getInstance(this);
-        notificationDao = database.getNotificationDao();
 
         notification = createNotification();
         notification

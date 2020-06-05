@@ -8,6 +8,8 @@ import com.android.sssameeri.notificationlist.model.NotificationModel;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import io.reactivex.Completable;
 import io.reactivex.Flowable;
 import io.reactivex.Single;
@@ -16,12 +18,14 @@ import io.reactivex.schedulers.Schedulers;
 
 public class Repository {
 
-    private NotificationDao notificationDao;
-    private Database database;
+    Database database;
 
-    public Repository(Application application) {
-        database = Database.getInstance(application);
-        notificationDao = database.getNotificationDao();
+    NotificationDao notificationDao;
+
+    @Inject
+    public Repository(Database database, NotificationDao notificationDao) {
+        this.database = database;
+        this.notificationDao = notificationDao;
     }
 
     public Flowable<List<NotificationModel>> getNotificationList() {

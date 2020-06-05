@@ -17,10 +17,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.android.sssameeri.notificationlist.NotificationApplication;
 import com.android.sssameeri.notificationlist.R;
 import com.android.sssameeri.notificationlist.data.repository.Repository;
+import com.android.sssameeri.notificationlist.di.AppComponent;
 import com.android.sssameeri.notificationlist.service.NotificationsService;
 import com.google.android.material.button.MaterialButton;
+
+import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -34,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
     private NotificationAdapter notificationAdapter;
     private View view;
     private boolean isStarted = false;
-    private Repository repository;
+
+    @Inject
+    Repository repository;
 
     private CompositeDisposable compositeDisposable;
 
@@ -42,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ((NotificationApplication) getApplication()).getComponent().inject(this);
 
         //Set toolbar
         Toolbar toolbar = findViewById(R.id.appBar);
@@ -53,9 +61,6 @@ public class MainActivity extends AppCompatActivity {
         view = findViewById(R.id.noItemsLayout);
         notificationRecyclerView = findViewById(R.id.notificationsRecyclerView);
         startService = findViewById(R.id.startService);
-
-        //Repository
-        repository = new Repository(getApplication());
 
         //Setup RecyclerView
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);

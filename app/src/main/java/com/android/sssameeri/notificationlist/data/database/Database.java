@@ -21,16 +21,4 @@ import io.reactivex.schedulers.Schedulers;
 public abstract class Database extends RoomDatabase {
 
     public abstract NotificationDao getNotificationDao();
-
-    private static Database instance;
-
-    public static Database getInstance(Context context) {
-        if(instance == null) {
-            instance = Room.databaseBuilder(context.getApplicationContext(),
-                    Database.class,
-                    "notification_database")
-                    .build();
-        }
-        return instance;
-    }
 }

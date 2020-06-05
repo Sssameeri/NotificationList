@@ -2,8 +2,8 @@
 <com.google.android.material.appbar.MaterialToolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:title="@string/app_name"
-    app:menu="@menu/app_bar_menu"
+    xmlns:notificationApplication="http://schemas.android.com/apk/res-auto"
+    notificationApplication:title="@string/app_name"
+    notificationApplication:menu="@menu/app_bar_menu"
     android:background="@android:color/white"
     />
