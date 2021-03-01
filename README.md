@@ -1,5 +1,4 @@
 # NotificationList
-Приложение выполненое по тестовому заданию Lavabird
 
 <p align="center">
   <img src="1.png" width="250" title="1">
